@@ -1,7 +1,4 @@
-﻿using System;
-using System.Text;
-
-namespace HomeWork7
+﻿namespace HomeWork7
 {
     internal class Program
     {
@@ -31,11 +28,10 @@ namespace HomeWork7
         {
             if (string.IsNullOrEmpty(text)) return text;
 
-            text = text.TrimStart();
+            text = text.Trim();
 
             char[] chars = text.ToCharArray();
 
-            // პირველი ასო
             for (int i = 0; i < chars.Length; i++)
             {
                 if (char.IsLetter(chars[i]))
@@ -45,13 +41,11 @@ namespace HomeWork7
                 }
             }
 
-            // წერტილის შემდეგი პირველი ასო
             for (int i = 0; i < chars.Length; i++)
             {
                 if (chars[i] == '.')
                 {
                     int j = i + 1;
-                    // ვახტებით space-ებს
                     while (j < chars.Length && chars[j] == ' ') j++;
 
                     if (j < chars.Length && char.IsLetter(chars[j]))
